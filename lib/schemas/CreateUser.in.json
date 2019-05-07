@@ -1,0 +1,76 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "DisplayName": {
+                    "description": "The display name for the user to be created.",
+                    "maxLength": 256,
+                    "type": "string"
+                },
+                "Name": {
+                    "description": "The name for the user to be created.",
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "[\\w\\-.]+(@[a-zA-Z0-9.\\-]+\\.[a-zA-Z0-9]{2,})?",
+                    "type": "string"
+                },
+                "OrganizationId": {
+                    "description": "The identifier of the organization for which the user is created.",
+                    "pattern": "^m-[0-9a-f]{32}$",
+                    "type": "string"
+                },
+                "Password": {
+                    "description": "The password for the user to be created.",
+                    "format": "password",
+                    "maxLength": 256,
+                    "pattern": "[\\u0020-\\u00FF]+",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "OrganizationId",
+                "Name",
+                "DisplayName",
+                "Password"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

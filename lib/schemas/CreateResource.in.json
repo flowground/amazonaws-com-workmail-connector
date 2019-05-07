@@ -1,0 +1,71 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "Name": {
+                    "description": "The name of the created resource.",
+                    "maxLength": 20,
+                    "minLength": 1,
+                    "pattern": "[\\w\\-.]+(@[a-zA-Z0-9.\\-]+\\.[a-zA-Z0-9]{2,})?",
+                    "type": "string"
+                },
+                "OrganizationId": {
+                    "description": "The identifier associated with the organization for which the resource is created.",
+                    "pattern": "^m-[0-9a-f]{32}$",
+                    "type": "string"
+                },
+                "Type": {
+                    "description": "The type of the created resource.",
+                    "enum": [
+                        "ROOM",
+                        "EQUIPMENT"
+                    ],
+                    "type": "string"
+                }
+            },
+            "required": [
+                "OrganizationId",
+                "Name",
+                "Type"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,73 @@
+{
+    "type": "object",
+    "properties": {
+        "MaxResults": {
+            "required": false,
+            "type": "string"
+        },
+        "NextToken": {
+            "required": false,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "EntityId": {
+                    "description": "The identifier of the entity (user or group) for which to list mailbox permissions.",
+                    "maxLength": 256,
+                    "minLength": 12,
+                    "type": "string"
+                },
+                "MaxResults": {
+                    "description": "The maximum number of results to return in a single call.",
+                    "maximum": 100,
+                    "minimum": 1,
+                    "type": "integer"
+                },
+                "NextToken": {
+                    "description": "The token to use to retrieve the next page of results. The first call does not contain any tokens.",
+                    "maxLength": 1024,
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "OrganizationId": {
+                    "description": "The identifier of the organization under which the entity (user or group) exists.",
+                    "pattern": "^m-[0-9a-f]{32}$",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "OrganizationId",
+                "EntityId"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

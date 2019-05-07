@@ -1,0 +1,567 @@
+{
+    "title": "Amazon WorkMail",
+    "description": "<p>Amazon WorkMail is a secure, managed business email and calendaring service with support for existing desktop and mobile email clients. You can access your email, contacts, and calendars using Microsoft Outlook, your browser, or their native iOS and Android email applications. You can integrate Amazon WorkMail with your existing corporate directory and control both the keys that encrypt your data and the location in which your data is stored.</p> <p>The Amazon WorkMail API is designed for the following scenarios:</p> <ul> <li> <p>Listing and describing organizations</p> </li> </ul> <ul> <li> <p>Managing users</p> </li> </ul> <ul> <li> <p>Managing groups</p> </li> </ul> <ul> <li> <p>Managing resources</p> </li> </ul> <p>All Amazon WorkMail API actions are Amazon-authenticated and certificate-signed. They not only require the use of the AWS SDK, but also allow for the exclusive use of IAM users and roles to help facilitate access, trust, and permission policies. By creating a role and allowing an IAM user to access the Amazon WorkMail site, the IAM user gains full administrative visibility into the entire Amazon WorkMail organization (or as set in the IAM policy). This includes, but is not limited to, the ability to create, update, and delete users, groups, and resources. This allows developers to perform the scenarios listed above, as well as give users the ability to grant access on a selective basis using the IAM model.</p>",
+    "docsUrl": "https://docs.aws.amazon.com/workmail/",
+    "url": "https://api.apis.guru/v2/specs/amazonaws.com/workmail/2017-10-01/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://workmail.amazonaws.com/",
+                    "http://workmail.amazonaws.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "hmac": {
+                "label": "Authorization (hmac)",
+                "viewClass": "TextFieldView",
+                "note": "Amazon Signature authorization v4"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "AssociateDelegateToResource": {
+            "main": "./lib/actions/AssociateDelegateToResource.js",
+            "title": "Adds a member to the resource's set of delegates.",
+            "description": "Adds a member to the resource's set of delegates.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AssociateDelegateToResource.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AssociateMemberToGroup": {
+            "main": "./lib/actions/AssociateMemberToGroup.js",
+            "title": "Adds a member to the group's set.",
+            "description": "Adds a member to the group's set.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AssociateMemberToGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateAlias": {
+            "main": "./lib/actions/CreateAlias.js",
+            "title": "Adds an alias to the set of a given member of Amazon WorkMail.",
+            "description": "Adds an alias to the set of a given member of Amazon WorkMail.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateAlias.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateGroup": {
+            "main": "./lib/actions/CreateGroup.js",
+            "title": "Creates a group that can be used in Amazon WorkMail by calling the RegisterToWorkMail operation.",
+            "description": "Creates a group that can be used in Amazon WorkMail by calling the RegisterToWorkMail operation.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateResource": {
+            "main": "./lib/actions/CreateResource.js",
+            "title": "Creates a new Amazon WorkMail resource. The available types are equipment and room.",
+            "description": "Creates a new Amazon WorkMail resource. The available types are equipment and room.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateResource.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateUser": {
+            "main": "./lib/actions/CreateUser.js",
+            "title": "Creates a user who can be used in Amazon WorkMail by calling the RegisterToWorkMail operation.",
+            "description": "Creates a user who can be used in Amazon WorkMail by calling the RegisterToWorkMail operation.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateUser.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteAlias": {
+            "main": "./lib/actions/DeleteAlias.js",
+            "title": "Remove the alias from a set of aliases for a given user.",
+            "description": "Remove the alias from a set of aliases for a given user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteAlias.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteGroup": {
+            "main": "./lib/actions/DeleteGroup.js",
+            "title": "Deletes a group from Amazon WorkMail.",
+            "description": "Deletes a group from Amazon WorkMail.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteMailboxPermissions": {
+            "main": "./lib/actions/DeleteMailboxPermissions.js",
+            "title": "Deletes permissions granted to a user or group.",
+            "description": "Deletes permissions granted to a user or group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteMailboxPermissions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteResource": {
+            "main": "./lib/actions/DeleteResource.js",
+            "title": "Deletes the specified resource. ",
+            "description": "Deletes the specified resource. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteResource.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteUser": {
+            "main": "./lib/actions/DeleteUser.js",
+            "title": "Deletes a user from Amazon WorkMail and all subsequent systems. The action can't be undone. The mailbox is kept as-is for a minimum of 30 days, without any means to restore it. ",
+            "description": "Deletes a user from Amazon WorkMail and all subsequent systems. The action can't be undone. The mailbox is kept as-is for a minimum of 30 days, without any means to restore it. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteUser.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeregisterFromWorkMail": {
+            "main": "./lib/actions/DeregisterFromWorkMail.js",
+            "title": "Mark a user, group, or resource as no longer used in Amazon WorkMail. This action disassociates the mailbox and schedules it for clean-up. Amazon WorkMail keeps mailboxes for 30 days before they are permanently removed. The functionality in the console is <i>Disable</i>.",
+            "description": "Mark a user, group, or resource as no longer used in Amazon WorkMail. This action disassociates the mailbox and schedules it for clean-up. Amazon WorkMail keeps mailboxes for 30 days before they are permanently removed. The functionality in the console is <i>Disable</i>.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeregisterFromWorkMail.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeGroup": {
+            "main": "./lib/actions/DescribeGroup.js",
+            "title": "Returns the data available for the group.",
+            "description": "Returns the data available for the group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeOrganization": {
+            "main": "./lib/actions/DescribeOrganization.js",
+            "title": "Provides more information regarding a given organization based on its identifier.",
+            "description": "Provides more information regarding a given organization based on its identifier.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeOrganization.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeResource": {
+            "main": "./lib/actions/DescribeResource.js",
+            "title": "Returns the data available for the resource.",
+            "description": "Returns the data available for the resource.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeResource.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeUser": {
+            "main": "./lib/actions/DescribeUser.js",
+            "title": "Provides information regarding the user.",
+            "description": "Provides information regarding the user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeUser.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DisassociateDelegateFromResource": {
+            "main": "./lib/actions/DisassociateDelegateFromResource.js",
+            "title": "Removes a member from the resource's set of delegates.",
+            "description": "Removes a member from the resource's set of delegates.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DisassociateDelegateFromResource.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DisassociateMemberFromGroup": {
+            "main": "./lib/actions/DisassociateMemberFromGroup.js",
+            "title": "Removes a member from a group.",
+            "description": "Removes a member from a group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DisassociateMemberFromGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListAliases": {
+            "main": "./lib/actions/ListAliases.js",
+            "title": "Creates a paginated call to list the aliases associated with a given entity.",
+            "description": "Creates a paginated call to list the aliases associated with a given entity.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListAliases.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListGroupMembers": {
+            "main": "./lib/actions/ListGroupMembers.js",
+            "title": "Returns an overview of the members of a group.",
+            "description": "Returns an overview of the members of a group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListGroupMembers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListGroups": {
+            "main": "./lib/actions/ListGroups.js",
+            "title": "Returns summaries of the organization's groups.",
+            "description": "Returns summaries of the organization's groups.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListGroups.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListMailboxPermissions": {
+            "main": "./lib/actions/ListMailboxPermissions.js",
+            "title": "Lists the mailbox permissions associated with a mailbox.",
+            "description": "Lists the mailbox permissions associated with a mailbox.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListMailboxPermissions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListOrganizations": {
+            "main": "./lib/actions/ListOrganizations.js",
+            "title": "Returns summaries of the customer's non-deleted organizations.",
+            "description": "Returns summaries of the customer's non-deleted organizations.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListOrganizations.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListResourceDelegates": {
+            "main": "./lib/actions/ListResourceDelegates.js",
+            "title": "Lists the delegates associated with a resource. Users and groups can be resource delegates and answer requests on behalf of the resource.",
+            "description": "Lists the delegates associated with a resource. Users and groups can be resource delegates and answer requests on behalf of the resource.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListResourceDelegates.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListResources": {
+            "main": "./lib/actions/ListResources.js",
+            "title": "Returns summaries of the organization's resources.",
+            "description": "Returns summaries of the organization's resources.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListResources.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListUsers": {
+            "main": "./lib/actions/ListUsers.js",
+            "title": "Returns summaries of the organization's users.",
+            "description": "Returns summaries of the organization's users.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListUsers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "PutMailboxPermissions": {
+            "main": "./lib/actions/PutMailboxPermissions.js",
+            "title": "Sets permissions for a user or group. This replaces any pre-existing permissions set for the entity.",
+            "description": "Sets permissions for a user or group. This replaces any pre-existing permissions set for the entity.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/PutMailboxPermissions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RegisterToWorkMail": {
+            "main": "./lib/actions/RegisterToWorkMail.js",
+            "title": "Registers an existing and disabled user, group, or resource/entity for Amazon WorkMail use by associating a mailbox and calendaring capabilities. It performs no change if the entity is enabled and fails if the entity is deleted. This operation results in the accumulation of costs. For more information, see <a href=\"http://aws.amazon.com/workmail/pricing\">Pricing</a>. The equivalent console functionality for this operation is <i>Enable</i>. Users can either be created by calling the CreateUser API or they can be synchronized from your directory. For more information, see DeregisterFromWorkMail.",
+            "description": "Registers an existing and disabled user, group, or resource/entity for Amazon WorkMail use by associating a mailbox and calendaring capabilities. It performs no change if the entity is enabled and fails if the entity is deleted. This operation results in the accumulation of costs. For more information, see <a href=\"http://aws.amazon.com/workmail/pricing\">Pricing</a>. The equivalent console functionality for this operation is <i>Enable</i>. Users can either be created by calling the CreateUser API or they can be synchronized from your directory. For more information, see DeregisterFromWorkMail.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RegisterToWorkMail.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ResetPassword": {
+            "main": "./lib/actions/ResetPassword.js",
+            "title": "Allows the administrator to reset the password for a user.",
+            "description": "Allows the administrator to reset the password for a user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ResetPassword.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdatePrimaryEmailAddress": {
+            "main": "./lib/actions/UpdatePrimaryEmailAddress.js",
+            "title": "Updates the primary email for an entity. The current email is moved into the list of aliases (or swapped between an existing alias and the current primary email) and the email provided in the input is promoted as the primary.",
+            "description": "Updates the primary email for an entity. The current email is moved into the list of aliases (or swapped between an existing alias and the current primary email) and the email provided in the input is promoted as the primary.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdatePrimaryEmailAddress.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateResource": {
+            "main": "./lib/actions/UpdateResource.js",
+            "title": "Updates data for the resource. It must be preceded by a describe call in order to have the latest information. The dataset in the request should be the one expected when performing another describe call.",
+            "description": "Updates data for the resource. It must be preceded by a describe call in order to have the latest information. The dataset in the request should be the one expected when performing another describe call.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateResource.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
