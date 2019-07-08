@@ -1,6 +1,6 @@
 {
     "title": "Amazon WorkMail",
-    "description": "<p>Amazon WorkMail is a secure, managed business email and calendaring service with support for existing desktop and mobile email clients. You can access your email, contacts, and calendars using Microsoft Outlook, your browser, or their native iOS and Android email applications. You can integrate Amazon WorkMail with your existing corporate directory and control both the keys that encrypt your data and the location in which your data is stored.</p> <p>The Amazon WorkMail API is designed for the following scenarios:</p> <ul> <li> <p>Listing and describing organizations</p> </li> </ul> <ul> <li> <p>Managing users</p> </li> </ul> <ul> <li> <p>Managing groups</p> </li> </ul> <ul> <li> <p>Managing resources</p> </li> </ul> <p>All Amazon WorkMail API actions are Amazon-authenticated and certificate-signed. They not only require the use of the AWS SDK, but also allow for the exclusive use of IAM users and roles to help facilitate access, trust, and permission policies. By creating a role and allowing an IAM user to access the Amazon WorkMail site, the IAM user gains full administrative visibility into the entire Amazon WorkMail organization (or as set in the IAM policy). This includes, but is not limited to, the ability to create, update, and delete users, groups, and resources. This allows developers to perform the scenarios listed above, as well as give users the ability to grant access on a selective basis using the IAM model.</p>",
+    "description": "Amazon WorkMail is a secure, managed business email and calendaring service with\nsupport for existing desktop and mobile email clients. You can access your\nemail, contacts, and calendars using Microsoft Outlook, your browser, or their\nnative iOS and Android email applications. You can integrate Amazon WorkMail\nwith your existing corporate directory and control both the keys that encrypt\nyour data and the location in which your data is stored.\n\nThe Amazon WorkMail API is designed for the following scenarios:\n\n *  Listing and describing organizations\n   \n   \n\n *  Managing users\n   \n   \n\n *  Managing groups\n   \n   \n\n *  Managing resources\n   \n   \n\nAll Amazon WorkMail API actions are Amazon-authenticated and certificate-signed.\nThey not only require the use of the AWS SDK, but also allow for the exclusive\nuse of IAM users and roles to help facilitate access, trust, and permission\npolicies. By creating a role and allowing an IAM user to access the Amazon\nWorkMail site, the IAM user gains full administrative visibility into the entire\nAmazon WorkMail organization (or as set in the IAM policy). This includes, but\nis not limited to, the ability to create, update, and delete users, groups, and\nresources. This allows developers to perform the scenarios listed above, as well\nas give users the ability to grant access on a selective basis using the IAM\nmodel.",
     "docsUrl": "https://docs.aws.amazon.com/workmail/",
     "url": "https://api.apis.guru/v2/specs/amazonaws.com/workmail/2017-10-01/swagger.json",
     "envVars": {},
@@ -20,7 +20,7 @@
                 "label": "Custom Server URL",
                 "viewClass": "TextFieldView"
             },
-            "hmac": {
+            "auth_hmac": {
                 "label": "Authorization (hmac)",
                 "viewClass": "TextFieldView",
                 "note": "Amazon Signature authorization v4"
@@ -38,7 +38,7 @@
     "actions": {
         "AssociateDelegateToResource": {
             "main": "./lib/actions/AssociateDelegateToResource.js",
-            "title": "Adds a member to the resource's set of delegates.",
+            "title": "AssociateDelegateToResource",
             "description": "Adds a member to the resource's set of delegates.",
             "fields": {
                 "verbose": {
@@ -55,7 +55,7 @@
         },
         "AssociateMemberToGroup": {
             "main": "./lib/actions/AssociateMemberToGroup.js",
-            "title": "Adds a member to the group's set.",
+            "title": "AssociateMemberToGroup",
             "description": "Adds a member to the group's set.",
             "fields": {
                 "verbose": {
@@ -72,7 +72,7 @@
         },
         "CreateAlias": {
             "main": "./lib/actions/CreateAlias.js",
-            "title": "Adds an alias to the set of a given member of Amazon WorkMail.",
+            "title": "CreateAlias",
             "description": "Adds an alias to the set of a given member of Amazon WorkMail.",
             "fields": {
                 "verbose": {
@@ -89,7 +89,7 @@
         },
         "CreateGroup": {
             "main": "./lib/actions/CreateGroup.js",
-            "title": "Creates a group that can be used in Amazon WorkMail by calling the RegisterToWorkMail operation.",
+            "title": "CreateGroup",
             "description": "Creates a group that can be used in Amazon WorkMail by calling the RegisterToWorkMail operation.",
             "fields": {
                 "verbose": {
@@ -106,7 +106,7 @@
         },
         "CreateResource": {
             "main": "./lib/actions/CreateResource.js",
-            "title": "Creates a new Amazon WorkMail resource. The available types are equipment and room.",
+            "title": "CreateResource",
             "description": "Creates a new Amazon WorkMail resource. The available types are equipment and room.",
             "fields": {
                 "verbose": {
@@ -123,7 +123,7 @@
         },
         "CreateUser": {
             "main": "./lib/actions/CreateUser.js",
-            "title": "Creates a user who can be used in Amazon WorkMail by calling the RegisterToWorkMail operation.",
+            "title": "CreateUser",
             "description": "Creates a user who can be used in Amazon WorkMail by calling the RegisterToWorkMail operation.",
             "fields": {
                 "verbose": {
@@ -140,7 +140,7 @@
         },
         "DeleteAlias": {
             "main": "./lib/actions/DeleteAlias.js",
-            "title": "Remove the alias from a set of aliases for a given user.",
+            "title": "DeleteAlias",
             "description": "Remove the alias from a set of aliases for a given user.",
             "fields": {
                 "verbose": {
@@ -157,7 +157,7 @@
         },
         "DeleteGroup": {
             "main": "./lib/actions/DeleteGroup.js",
-            "title": "Deletes a group from Amazon WorkMail.",
+            "title": "DeleteGroup",
             "description": "Deletes a group from Amazon WorkMail.",
             "fields": {
                 "verbose": {
@@ -174,7 +174,7 @@
         },
         "DeleteMailboxPermissions": {
             "main": "./lib/actions/DeleteMailboxPermissions.js",
-            "title": "Deletes permissions granted to a user or group.",
+            "title": "DeleteMailboxPermissions",
             "description": "Deletes permissions granted to a user or group.",
             "fields": {
                 "verbose": {
@@ -191,7 +191,7 @@
         },
         "DeleteResource": {
             "main": "./lib/actions/DeleteResource.js",
-            "title": "Deletes the specified resource. ",
+            "title": "DeleteResource",
             "description": "Deletes the specified resource. ",
             "fields": {
                 "verbose": {
@@ -208,7 +208,7 @@
         },
         "DeleteUser": {
             "main": "./lib/actions/DeleteUser.js",
-            "title": "Deletes a user from Amazon WorkMail and all subsequent systems. The action can't be undone. The mailbox is kept as-is for a minimum of 30 days, without any means to restore it. ",
+            "title": "DeleteUser",
             "description": "Deletes a user from Amazon WorkMail and all subsequent systems. The action can't be undone. The mailbox is kept as-is for a minimum of 30 days, without any means to restore it. ",
             "fields": {
                 "verbose": {
@@ -225,7 +225,7 @@
         },
         "DeregisterFromWorkMail": {
             "main": "./lib/actions/DeregisterFromWorkMail.js",
-            "title": "Mark a user, group, or resource as no longer used in Amazon WorkMail. This action disassociates the mailbox and schedules it for clean-up. Amazon WorkMail keeps mailboxes for 30 days before they are permanently removed. The functionality in the console is <i>Disable</i>.",
+            "title": "DeregisterFromWorkMail",
             "description": "Mark a user, group, or resource as no longer used in Amazon WorkMail. This action disassociates the mailbox and schedules it for clean-up. Amazon WorkMail keeps mailboxes for 30 days before they are permanently removed. The functionality in the console is <i>Disable</i>.",
             "fields": {
                 "verbose": {
@@ -242,7 +242,7 @@
         },
         "DescribeGroup": {
             "main": "./lib/actions/DescribeGroup.js",
-            "title": "Returns the data available for the group.",
+            "title": "DescribeGroup",
             "description": "Returns the data available for the group.",
             "fields": {
                 "verbose": {
@@ -259,7 +259,7 @@
         },
         "DescribeOrganization": {
             "main": "./lib/actions/DescribeOrganization.js",
-            "title": "Provides more information regarding a given organization based on its identifier.",
+            "title": "DescribeOrganization",
             "description": "Provides more information regarding a given organization based on its identifier.",
             "fields": {
                 "verbose": {
@@ -276,7 +276,7 @@
         },
         "DescribeResource": {
             "main": "./lib/actions/DescribeResource.js",
-            "title": "Returns the data available for the resource.",
+            "title": "DescribeResource",
             "description": "Returns the data available for the resource.",
             "fields": {
                 "verbose": {
@@ -293,7 +293,7 @@
         },
         "DescribeUser": {
             "main": "./lib/actions/DescribeUser.js",
-            "title": "Provides information regarding the user.",
+            "title": "DescribeUser",
             "description": "Provides information regarding the user.",
             "fields": {
                 "verbose": {
@@ -310,7 +310,7 @@
         },
         "DisassociateDelegateFromResource": {
             "main": "./lib/actions/DisassociateDelegateFromResource.js",
-            "title": "Removes a member from the resource's set of delegates.",
+            "title": "DisassociateDelegateFromResource",
             "description": "Removes a member from the resource's set of delegates.",
             "fields": {
                 "verbose": {
@@ -327,7 +327,7 @@
         },
         "DisassociateMemberFromGroup": {
             "main": "./lib/actions/DisassociateMemberFromGroup.js",
-            "title": "Removes a member from a group.",
+            "title": "DisassociateMemberFromGroup",
             "description": "Removes a member from a group.",
             "fields": {
                 "verbose": {
@@ -344,7 +344,7 @@
         },
         "ListAliases": {
             "main": "./lib/actions/ListAliases.js",
-            "title": "Creates a paginated call to list the aliases associated with a given entity.",
+            "title": "ListAliases",
             "description": "Creates a paginated call to list the aliases associated with a given entity.",
             "fields": {
                 "verbose": {
@@ -361,7 +361,7 @@
         },
         "ListGroupMembers": {
             "main": "./lib/actions/ListGroupMembers.js",
-            "title": "Returns an overview of the members of a group.",
+            "title": "ListGroupMembers",
             "description": "Returns an overview of the members of a group.",
             "fields": {
                 "verbose": {
@@ -378,7 +378,7 @@
         },
         "ListGroups": {
             "main": "./lib/actions/ListGroups.js",
-            "title": "Returns summaries of the organization's groups.",
+            "title": "ListGroups",
             "description": "Returns summaries of the organization's groups.",
             "fields": {
                 "verbose": {
@@ -395,7 +395,7 @@
         },
         "ListMailboxPermissions": {
             "main": "./lib/actions/ListMailboxPermissions.js",
-            "title": "Lists the mailbox permissions associated with a mailbox.",
+            "title": "ListMailboxPermissions",
             "description": "Lists the mailbox permissions associated with a mailbox.",
             "fields": {
                 "verbose": {
@@ -412,7 +412,7 @@
         },
         "ListOrganizations": {
             "main": "./lib/actions/ListOrganizations.js",
-            "title": "Returns summaries of the customer's non-deleted organizations.",
+            "title": "ListOrganizations",
             "description": "Returns summaries of the customer's non-deleted organizations.",
             "fields": {
                 "verbose": {
@@ -429,7 +429,7 @@
         },
         "ListResourceDelegates": {
             "main": "./lib/actions/ListResourceDelegates.js",
-            "title": "Lists the delegates associated with a resource. Users and groups can be resource delegates and answer requests on behalf of the resource.",
+            "title": "ListResourceDelegates",
             "description": "Lists the delegates associated with a resource. Users and groups can be resource delegates and answer requests on behalf of the resource.",
             "fields": {
                 "verbose": {
@@ -446,7 +446,7 @@
         },
         "ListResources": {
             "main": "./lib/actions/ListResources.js",
-            "title": "Returns summaries of the organization's resources.",
+            "title": "ListResources",
             "description": "Returns summaries of the organization's resources.",
             "fields": {
                 "verbose": {
@@ -463,7 +463,7 @@
         },
         "ListUsers": {
             "main": "./lib/actions/ListUsers.js",
-            "title": "Returns summaries of the organization's users.",
+            "title": "ListUsers",
             "description": "Returns summaries of the organization's users.",
             "fields": {
                 "verbose": {
@@ -480,7 +480,7 @@
         },
         "PutMailboxPermissions": {
             "main": "./lib/actions/PutMailboxPermissions.js",
-            "title": "Sets permissions for a user or group. This replaces any pre-existing permissions set for the entity.",
+            "title": "PutMailboxPermissions",
             "description": "Sets permissions for a user or group. This replaces any pre-existing permissions set for the entity.",
             "fields": {
                 "verbose": {
@@ -497,7 +497,7 @@
         },
         "RegisterToWorkMail": {
             "main": "./lib/actions/RegisterToWorkMail.js",
-            "title": "Registers an existing and disabled user, group, or resource/entity for Amazon WorkMail use by associating a mailbox and calendaring capabilities. It performs no change if the entity is enabled and fails if the entity is deleted. This operation results in the accumulation of costs. For more information, see <a href=\"http://aws.amazon.com/workmail/pricing\">Pricing</a>. The equivalent console functionality for this operation is <i>Enable</i>. Users can either be created by calling the CreateUser API or they can be synchronized from your directory. For more information, see DeregisterFromWorkMail.",
+            "title": "RegisterToWorkMail",
             "description": "Registers an existing and disabled user, group, or resource/entity for Amazon WorkMail use by associating a mailbox and calendaring capabilities. It performs no change if the entity is enabled and fails if the entity is deleted. This operation results in the accumulation of costs. For more information, see <a href=\"http://aws.amazon.com/workmail/pricing\">Pricing</a>. The equivalent console functionality for this operation is <i>Enable</i>. Users can either be created by calling the CreateUser API or they can be synchronized from your directory. For more information, see DeregisterFromWorkMail.",
             "fields": {
                 "verbose": {
@@ -514,7 +514,7 @@
         },
         "ResetPassword": {
             "main": "./lib/actions/ResetPassword.js",
-            "title": "Allows the administrator to reset the password for a user.",
+            "title": "ResetPassword",
             "description": "Allows the administrator to reset the password for a user.",
             "fields": {
                 "verbose": {
@@ -531,7 +531,7 @@
         },
         "UpdatePrimaryEmailAddress": {
             "main": "./lib/actions/UpdatePrimaryEmailAddress.js",
-            "title": "Updates the primary email for an entity. The current email is moved into the list of aliases (or swapped between an existing alias and the current primary email) and the email provided in the input is promoted as the primary.",
+            "title": "UpdatePrimaryEmailAddress",
             "description": "Updates the primary email for an entity. The current email is moved into the list of aliases (or swapped between an existing alias and the current primary email) and the email provided in the input is promoted as the primary.",
             "fields": {
                 "verbose": {
@@ -548,7 +548,7 @@
         },
         "UpdateResource": {
             "main": "./lib/actions/UpdateResource.js",
-            "title": "Updates data for the resource. It must be preceded by a describe call in order to have the latest information. The dataset in the request should be the one expected when performing another describe call.",
+            "title": "UpdateResource",
             "description": "Updates data for the resource. It must be preceded by a describe call in order to have the latest information. The dataset in the request should be the one expected when performing another describe call.",
             "fields": {
                 "verbose": {
